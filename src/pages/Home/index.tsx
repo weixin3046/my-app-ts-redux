@@ -18,6 +18,7 @@ function HomaPage() {
       <div>
         <Button type="primary">type="primary"</Button>
         <div>{JSON.stringify(data, null, 2)}</div>
+        我这就是测试用的
         {/* <div>loading: {loading} </div> */}
         {/* <div>error:{error}</div> */}
       </div>

@@ -1,6 +1,5 @@
 import { TransactionResponse } from "@ethersproject/providers";
 import { useWeb3React } from "@web3-react/core";
-import { Token } from "@uniswap/sdk-core";
 import { TransactionDetails, TransactionType, TransactionInfo } from "./types";
 import { useAppDispatch, useAppSelector } from "state/hooks";
 import { useMemo, useCallback } from "react";
@@ -47,10 +46,7 @@ export function isTransactionRecent(tx: TransactionDetails): boolean {
 }
 
 // returns whether a token has a pending approval transaction
-export function useHasPendingApproval(
-  token?: Token,
-  spender?: string
-): boolean {
+export function useHasPendingApproval(token?: any, spender?: string): boolean {
   const allTransactions = useAllTransactions();
   return useMemo(
     () =>

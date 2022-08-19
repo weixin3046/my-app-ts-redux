@@ -7,22 +7,12 @@ import {
   isTransactionRecent,
   useAllTransactions,
 } from "../../state/transactions/hooks";
-import { Activity } from "react-feather";
-import { isChainAllowed } from "utils/switchChain";
-import { useHasSocks } from "hooks/useSocksBalance";
 import { useToggleWalletModal } from "state/application/hooks";
-import styled, { css } from "styled-components/macro";
+import styled from "styled-components/macro";
 import { shortenAddress } from "../../utils";
 import Loader from "../Loader";
-import { RowBetween } from "components/Row";
+import { Button } from "antd";
 import WalletModal from "../WalletModal";
-
-const NetworkIcon = styled(Activity)`
-  margin-left: 0.25rem;
-  margin-right: 0.5rem;
-  width: 16px;
-  height: 16px;
-`;
 
 const Text = styled.p`
   flex: 1 1 auto;
@@ -60,16 +50,13 @@ function newTransactionsFirst(a: TransactionDetails, b: TransactionDetails) {
 
 function Web3StatusInner() {
   const { account, connector, chainId, ENSName } = useWeb3React();
+  console.log(account);
   const connectionType = getConnection(connector).type;
-
   const error = useAppSelector(
     (state) =>
       state.connection.errorByConnectionType[getConnection(connector).type]
   );
-  const chainAllowed = chainId && isChainAllowed(connector, chainId);
-
   const allTransactions = useAllTransactions();
-
   const sortedRecentTransactions = useMemo(() => {
     const txs = Object.values(allTransactions);
     return txs.filter(isTransactionRecent).sort(newTransactionsFirst);
@@ -78,62 +65,28 @@ function Web3StatusInner() {
   const pending = sortedRecentTransactions
     .filter((tx) => !tx.receipt)
     .map((tx) => tx.hash);
-
   const hasPendingTransactions = !!pending.length;
   const toggleWalletModal = useToggleWalletModal();
-  console.log(!chainId, chainId, account);
   if (!chainId) {
-    return null;
-  } else if (!chainAllowed) {
-    return (
-      <button onClick={toggleWalletModal}>
-        <NetworkIcon />
-        <div>Wrong Network</div>
-      </button>
-    );
+    // 没有能连接的网络
+    return <>null</>;
   } else if (error) {
-    return (
-      <button onClick={toggleWalletModal}>
-        <NetworkIcon />
-        <div>Error</div>
-      </button>
-    );
+    return <Button onClick={toggleWalletModal}>error</Button>;
   } else if (account) {
     return (
-      <div
-        data-testid="web3-status-connected"
-        onClick={toggleWalletModal}
-        // pending={hasPendingTransactions}
-      >
+      <Button onClick={toggleWalletModal}>
         {hasPendingTransactions ? (
-          <RowBetween>
-            <div>
-              <div>{pending?.length} Pending</div>
-            </div>{" "}
-            <Loader stroke="white" />
-          </RowBetween>
+          <div>
+            Pending <Loader stroke="red" />
+          </div>
         ) : (
-          <>
-            {/* {hasSocks ? <Sock /> : null} */}
-            <div>{ENSName || shortenAddress(account)}</div>
-          </>
+          <Text>{ENSName || shortenAddress(account)}</Text>
         )}
-        {/* {!hasPendingTransactions && (
-          <StatusIcon connectionType={connectionType} />
-        )} */}
-      </div>
+        {!hasPendingTransactions && connectionType}
+      </Button>
     );
   } else {
-    return (
-      <div
-        onClick={toggleWalletModal}
-        // faded={!account}
-      >
-        <Text>
-          <span>Connect Wallet</span>
-        </Text>
-      </div>
-    );
+    return <Button onClick={toggleWalletModal}>Connect Wallet</Button>;
   }
 }
 

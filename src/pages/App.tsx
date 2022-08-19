@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components/macro";
 import HomaPage from "./Home";

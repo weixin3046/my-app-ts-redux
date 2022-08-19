@@ -1,6 +1,3 @@
-import { useConfigContract } from "hooks/useContract";
-import { Contract } from "@ethersproject/contracts";
-import { useWeb3React } from "@web3-react/core";
 import { Button } from "antd";
 import { useQuery } from "@apollo/client";
 import { query, variables } from "apollographql/home";

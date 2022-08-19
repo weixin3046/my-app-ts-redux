@@ -8,11 +8,9 @@ export interface ConnectionState {
 export const initialState: ConnectionState = {
   errorByConnectionType: {
     [ConnectionType.INJECTED]: undefined,
-    [ConnectionType.FORTMATIC]: undefined,
     [ConnectionType.WALLET_CONNECT]: undefined,
     [ConnectionType.COINBASE_WALLET]: undefined,
     [ConnectionType.NETWORK]: undefined,
-    [ConnectionType.GNOSIS_SAFE]: undefined,
   },
 };
 

@@ -1,8 +1,6 @@
 import { Connector } from "@web3-react/types";
 import {
   coinbaseWalletConnection,
-  fortmaticConnection,
-  gnosisSafeConnection,
   injectedConnection,
   networkConnection,
   walletConnectConnection,
@@ -24,13 +22,10 @@ function getRpcUrls(chainId: SupportedChainId): [string] {
 
 export function isChainAllowed(connector: Connector, chainId: number) {
   switch (connector) {
-    case fortmaticConnection.connector:
     case injectedConnection.connector:
     case coinbaseWalletConnection.connector:
     case walletConnectConnection.connector:
     case networkConnection.connector:
-    case gnosisSafeConnection.connector:
-      return ALL_SUPPORTED_CHAIN_IDS.includes(chainId);
     default:
       return false;
   }

@@ -1,4 +1,8 @@
 
+# run 
+
+- create
+
 # redux 用法
 
 useSelector 获取store的初始值

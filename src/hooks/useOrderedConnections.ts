@@ -1,44 +1,21 @@
 import { ConnectionType } from "connection";
 import { getConnection } from "connection/utils";
 import { useMemo } from "react";
-import { BACKFILLABLE_WALLETS } from "state/connection/constants";
 import { useAppSelector } from "state/hooks";
 
-const SELECTABLE_WALLETS = [...BACKFILLABLE_WALLETS, ConnectionType.FORTMATIC];
+const SELECTABLE_WALLETS = [
+  ConnectionType.INJECTED,
+  ConnectionType.COINBASE_WALLET,
+  ConnectionType.WALLET_CONNECT,
+  ConnectionType.NETWORK,
+];
 
-// export default function useOrderedConnections() {
-//   const selectedWallet = useAppSelector(
-//     (state) => state.user.selectedWallet
-//   ) as ConnectionType;
-//   console.log(selectedWallet);
-//   return useMemo(() => {
-//     const orderedConnectionTypes: ConnectionType[] = [];
-
-//     // Always attempt to use to Gnosis Safe first, as we can't know if we're in a SafeContext.
-//     orderedConnectionTypes.push(ConnectionType.GNOSIS_SAFE);
-
-//     // Add the `selectedWallet` to the top so it's prioritized, then add the other selectable wallets.
-//     //TODO: eslint报错临时关闭
-//     if (selectedWallet) {
-//       orderedConnectionTypes.push(selectedWallet);
-//     }
-//     orderedConnectionTypes.push(
-//       ...SELECTABLE_WALLETS.filter((wallet) => wallet !== selectedWallet)
-//     );
-
-//     // Add network connection last as it should be the fallback.
-//     orderedConnectionTypes.push(ConnectionType.NETWORK);
-
-//     return orderedConnectionTypes.map(getConnection);
-//   }, [selectedWallet]);
-// }
 export default function useOrderedConnections() {
   const selectedWallet = useAppSelector((state) => state.user.selectedWallet);
   return useMemo(() => {
     const orderedConnectionTypes: ConnectionType[] = [];
 
     // Always attempt to use to Gnosis Safe first, as we can't know if we're in a SafeContext.
-    orderedConnectionTypes.push(ConnectionType.GNOSIS_SAFE);
 
     // Add the `selectedWallet` to the top so it's prioritized, then add the other selectable wallets.
     if (selectedWallet) {

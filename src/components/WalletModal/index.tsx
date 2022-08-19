@@ -1,123 +1,26 @@
-// import { Trans } from "@lingui/macro";
 import { useWeb3React } from "@web3-react/core";
 import { Connector } from "@web3-react/types";
-// import { sendEvent } from 'components/analytics'
-import { AutoColumn } from "components/Column";
-import { AutoRow } from "components/Row";
-import { ConnectionType } from "connection";
 import {
   getConnection,
   getIsCoinbaseWallet,
   getIsInjected,
   getIsMetaMask,
 } from "connection/utils";
-import { useCallback, useEffect, useState } from "react";
-import { ArrowLeft } from "react-feather";
+import { useState, useCallback, useEffect } from "react";
+import { useModalIsOpen, useToggleWalletModal } from "state/application/hooks";
+import { ApplicationModal } from "state/application/reducer";
 import { updateConnectionError } from "state/connection/reducer";
 import { useAppDispatch, useAppSelector } from "state/hooks";
 import { updateSelectedWallet } from "state/user/reducer";
-import styled from "styled-components/macro";
+import { ArrowLeft, XCircle } from "react-feather";
+import { Button } from "antd";
+import styled from "styled-components";
 import { isMobile } from "utils/userAgent";
 
-import { ReactComponent as Close } from "../../assets/images/x.svg";
-import {
-  useModalIsOpen,
-  useToggleWalletModal,
-} from "../../state/application/hooks";
-import { ApplicationModal } from "../../state/application/reducer";
-import { ThemedText } from "../../theme";
-import AccountDetails from "../AccountDetails";
-import { LightCard } from "../Card";
-import Modal from "../Modal";
-import {
-  CoinbaseWalletOption,
-  OpenCoinbaseWalletOption,
-} from "./CoinbaseWalletOption";
-import { FortmaticOption } from "./FortmaticOption";
-import {
-  InjectedOption,
-  InstallMetaMaskOption,
-  MetaMaskOption,
-} from "./InjectedOption";
-import PendingView from "./PendingView";
-import { WalletConnectOption } from "./WalletConnectOption";
-
 const CloseIcon = styled.div`
-  position: absolute;
-  right: 1rem;
-  top: 14px;
   &:hover {
     cursor: pointer;
     opacity: 0.6;
-  }
-`;
-
-const CloseColor = styled(Close)`
-  path {
-    stroke: ${({ theme }) => theme.text4};
-  }
-`;
-
-const Wrapper = styled.div`
-  ${({ theme }) => theme.flexColumnNoWrap}
-  margin: 0;
-  padding: 0;
-  width: 100%;
-`;
-
-const HeaderRow = styled.div`
-  ${({ theme }) => theme.flexRowNoWrap};
-  padding: 1rem 1rem;
-  font-weight: 500;
-  color: ${(props) =>
-    props.color === "blue" ? ({ theme }) => theme.primary1 : "inherit"};
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding: 1rem;
-  `};
-`;
-
-const ContentWrapper = styled.div`
-  background-color: ${({ theme }) => theme.bg0};
-  padding: 0 1rem 1rem 1rem;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  ${({ theme }) => theme.mediaWidth.upToMedium`padding: 0 1rem 1rem 1rem`};
-`;
-
-const UpperSection = styled.div`
-  position: relative;
-  h5 {
-    margin: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    font-weight: 400;
-  }
-  h5:last-child {
-    margin-bottom: 0px;
-  }
-  h4 {
-    margin-top: 0;
-    font-weight: 500;
-  }
-`;
-
-const OptionGrid = styled.div`
-  display: grid;
-  grid-gap: 10px;
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-  `};
-`;
-
-const HoverText = styled.div`
-  text-decoration: none;
-  color: ${({ theme }) => theme.text1};
-  display: flex;
-  align-items: center;
-
-  :hover {
-    cursor: pointer;
   }
 `;
 
@@ -138,9 +41,7 @@ export default function WalletModal({
 }) {
   const dispatch = useAppDispatch();
   const { account } = useWeb3React();
-
   const [walletView, setWalletView] = useState(WALLET_VIEWS.ACCOUNT);
-
   const [pendingConnector, setPendingConnector] = useState<
     Connector | undefined
   >();
@@ -151,10 +52,11 @@ export default function WalletModal({
         ]
       : undefined
   );
-
   const walletModalOpen = useModalIsOpen(ApplicationModal.WALLET);
   const toggleWalletModal = useToggleWalletModal();
-
+  // const [tokenBalances, tokenBalancesIsLoading] = useAllTokenBalances()
+  // const native = useNativeCurrency();
+  // const balances = useCurrencyBalances(account, sortedTokensWithETH)
   const openOptions = useCallback(() => {
     setWalletView(WALLET_VIEWS.OPTIONS);
   }, [setWalletView]);
@@ -179,19 +81,12 @@ export default function WalletModal({
     async (connector: Connector) => {
       const connectionType = getConnection(connector).type;
 
-      // log selected wallet
-      // sendEvent({
-      //   category: 'Wallet',
-      //   action: 'Change Wallet',
-      //   label: connectionType,
-      // })
-
       try {
         // Fortmatic opens it's own modal on activation to log in. This modal has a tabIndex
         // collision into the WalletModal, so we special case by closing the modal.
-        if (connectionType === ConnectionType.FORTMATIC) {
-          toggleWalletModal();
-        }
+        // if (connectionType === ConnectionType.FORTMATIC) {
+        //   toggleWalletModal();
+        // }
 
         setPendingConnector(connector);
         setWalletView(WALLET_VIEWS.PENDING);
@@ -223,37 +118,27 @@ export default function WalletModal({
     let injectedOption;
     if (!isInjected) {
       if (!isMobile) {
-        injectedOption = <InstallMetaMaskOption />;
+        injectedOption = <div>InstallMetaMaskOption</div>;
       }
     } else if (!isCoinbaseWallet) {
       if (isMetaMask) {
-        injectedOption = <MetaMaskOption tryActivation={tryActivation} />;
+        injectedOption = <div>MetaMaskOption</div>;
       } else {
-        injectedOption = <InjectedOption tryActivation={tryActivation} />;
+        injectedOption = <div>InjectedOption</div>;
       }
     }
 
     let coinbaseWalletOption;
     if (isMobile && !isInjectedMobileBrowser) {
-      coinbaseWalletOption = <OpenCoinbaseWalletOption />;
+      coinbaseWalletOption = <div>OpenCoinbaseWalletOption</div>;
     } else if (!isMobile || isCoinbaseWalletBrowser) {
-      coinbaseWalletOption = (
-        <CoinbaseWalletOption tryActivation={tryActivation} />
-      );
+      coinbaseWalletOption = <div>CoinbaseWalletOption</div>;
     }
-
     const walletConnectionOption =
-      (!isInjectedMobileBrowser && (
-        <WalletConnectOption tryActivation={tryActivation} />
-      )) ??
-      null;
+      (!isInjectedMobileBrowser && <div>WalletConnectOption</div>) ?? null;
 
     const fortmaticOption =
-      (!isInjectedMobileBrowser && (
-        <FortmaticOption tryActivation={tryActivation} />
-      )) ??
-      null;
-
+      (!isInjectedMobileBrowser && <div>FortmaticOption</div>) ?? null;
     return (
       <>
         {injectedOption}
@@ -263,106 +148,43 @@ export default function WalletModal({
       </>
     );
   }
-
   function getModalContent() {
     if (walletView === WALLET_VIEWS.ACCOUNT) {
-      return (
-        <AccountDetails
-          toggleWalletModal={toggleWalletModal}
-          pendingTransactions={pendingTransactions}
-          confirmedTransactions={confirmedTransactions}
-          ENSName={ENSName}
-          openOptions={openOptions}
-        />
-      );
+      return <div>{account}</div>;
     }
 
     let headerRow;
     if (walletView === WALLET_VIEWS.PENDING) {
       headerRow = null;
     } else if (walletView === WALLET_VIEWS.ACCOUNT || !!account) {
-      headerRow = (
-        <HeaderRow color="blue">
-          <HoverText
-            onClick={() =>
-              setWalletView(
-                account ? WALLET_VIEWS.ACCOUNT : WALLET_VIEWS.OPTIONS
-              )
-            }
-          >
-            <ArrowLeft />
-          </HoverText>
-        </HeaderRow>
-      );
+      <Button
+        onClick={() =>
+          setWalletView(account ? WALLET_VIEWS.ACCOUNT : WALLET_VIEWS.OPTIONS)
+        }
+      >
+        <ArrowLeft />
+      </Button>;
     } else {
-      headerRow = (
-        <HeaderRow>
-          <HoverText>
-            <span>Connect a wallet</span>
-          </HoverText>
-        </HeaderRow>
-      );
+      <div>Connect a walle</div>;
     }
-
     return (
-      <UpperSection>
-        <CloseIcon onClick={toggleWalletModal}>
-          <CloseColor />
-        </CloseIcon>
-        {headerRow}
-        <ContentWrapper>
-          <AutoColumn gap="16px">
-            {walletView === WALLET_VIEWS.PENDING && pendingConnector && (
-              <PendingView
-                openOptions={openOptions}
-                connector={pendingConnector}
-                error={!!pendingError}
-                tryActivation={tryActivation}
-              />
-            )}
-            {walletView !== WALLET_VIEWS.PENDING && (
-              <OptionGrid data-testid="option-grid">{getOptions()}</OptionGrid>
-            )}
-            {/* {!pendingError && (
-              <LightCard>
-                <AutoRow style={{ flexWrap: "nowrap" }}>
-                  <ThemedText.Body fontSize={12}>
-                    <span>
-                      By connecting a wallet, you agree to Uniswap Labs’{" "}
-                      <a
-                        style={{ textDecoration: "underline" }}
-                        href="https://uniswap.org/terms-of-service/"
-                      >
-                        Terms of Service
-                      </a>{" "}
-                      and acknowledge that you have read and understand the
-                      Uniswap{" "}
-                      <a
-                        style={{ textDecoration: "underline" }}
-                        href="https://uniswap.org/disclaimer/"
-                      >
-                        Protocol Disclaimer
-                      </a>
-                      .
-                    </span>
-                  </ThemedText.Body>
-                </AutoRow>
-              </LightCard>
-            )} */}
-          </AutoColumn>
-        </ContentWrapper>
-      </UpperSection>
+      <div>
+        <div>
+          {headerRow}
+          <CloseIcon onClick={toggleWalletModal}>
+            <XCircle />
+          </CloseIcon>
+        </div>
+        <div>
+          {walletView === WALLET_VIEWS.PENDING &&
+            pendingConnector &&
+            "PendingView"}
+          {walletView !== WALLET_VIEWS.PENDING && <div>{getOptions()}</div>}
+
+          {!pendingError && <div>底部信息</div>}
+        </div>
+      </div>
     );
   }
-
-  return (
-    <Modal
-      isOpen={walletModalOpen}
-      onDismiss={toggleWalletModal}
-      minHeight={false}
-      maxHeight={90}
-    >
-      <Wrapper>{getModalContent()}</Wrapper>
-    </Modal>
-  );
+  return <></>;
 }

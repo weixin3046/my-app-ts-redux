@@ -1,7 +1,7 @@
 import { AppState } from "state";
 import { useAppDispatch, useAppSelector } from "state/hooks";
-import { useCallback, useMemo } from "react";
-import { ApplicationModal, PopupContent, setOpenModal } from "./reducer";
+import { useCallback } from "react";
+import { ApplicationModal, setOpenModal } from "./reducer";
 
 export function useModalIsOpen(modal: ApplicationModal): boolean {
   const openModal = useAppSelector(

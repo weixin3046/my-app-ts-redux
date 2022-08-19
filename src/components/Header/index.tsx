@@ -195,16 +195,14 @@ export default function Header() {
           <ToggleMenuItem onClick={() => console.log("切换语言")}>
             <Globe />
           </ToggleMenuItem>
-          <ToggleMenuItem onClick={() => toggleDarkMode()}>
-            <div>
-              {/* {darkMode ? <span>Light Theme</span> : <span>Dark Theme</span>} */}
-            </div>
+          {/* <ToggleMenuItem onClick={() => toggleDarkMode()}>
             {darkMode ? (
               <Sun opacity={0.6} size={16} />
             ) : (
               <Moon opacity={0.6} size={16} />
             )}
-          </ToggleMenuItem>
+          </ToggleMenuItem> */}
+
           <Web3Status />
         </HeaderElement>
       </HeaderControls>

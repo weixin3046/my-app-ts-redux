@@ -15,9 +15,7 @@ export enum ConnectionType {
   INJECTED = "INJECTED",
   COINBASE_WALLET = "COINBASE_WALLET",
   WALLET_CONNECT = "WALLET_CONNECT",
-  FORTMATIC = "FORTMATIC",
   NETWORK = "NETWORK",
-  GNOSIS_SAFE = "GNOSIS_SAFE",
 }
 
 function onError(error: Error) {
@@ -30,17 +28,17 @@ export interface Connection {
   type: ConnectionType;
 }
 
-const [web3GnosisSafe, web3GnosisSafeHooks] = initializeConnector<GnosisSafe>(
-  (actions) => new GnosisSafe({ actions })
-);
+// const [web3GnosisSafe, web3GnosisSafeHooks] = initializeConnector<GnosisSafe>(
+//   (actions) => new GnosisSafe({ actions })
+// );
 
-export const gnosisSafeConnection: Connection = {
-  connector: web3GnosisSafe,
-  hooks: web3GnosisSafeHooks,
-  type: ConnectionType.GNOSIS_SAFE,
-};
-
-const [web3Injected, web3InjectedHooks] = initializeConnector<MetaMask>(
+// export const gnosisSafeConnection: Connection = {
+//   connector: web3GnosisSafe,
+//   hooks: web3GnosisSafeHooks,
+//   type: ConnectionType.GNOSIS_SAFE,
+// };
+// TODO:新版钱包
+export const [web3Injected, web3InjectedHooks] = initializeConnector<MetaMask>(
   (actions) => new MetaMask({ actions, onError })
 );
 export const injectedConnection: Connection = {
@@ -49,17 +47,7 @@ export const injectedConnection: Connection = {
   type: ConnectionType.INJECTED,
 };
 
-const [web3Network, web3NetworkHooks] = initializeConnector<Network>(
-  (actions) => new Network({ actions, urlMap: RPC_URLS, defaultChainId: 1 })
-);
-
-export const networkConnection: Connection = {
-  connector: web3Network,
-  hooks: web3NetworkHooks,
-  type: ConnectionType.NETWORK,
-};
-
-const [web3WalletConnect, web3WalletConnectHooks] =
+export const [web3WalletConnect, web3WalletConnectHooks] =
   initializeConnector<WalletConnect>(
     (actions) =>
       new WalletConnect({
@@ -77,31 +65,14 @@ export const walletConnectConnection: Connection = {
   type: ConnectionType.WALLET_CONNECT,
 };
 
-const [web3Fortmatic, web3FortmaticHooks] = initializeConnector<EIP1193>(
-  (actions) =>
-    new EIP1193({
-      actions,
-      //@ts-ignore
-      provider: new Fortmatic(
-        //@ts-ignore
-        process.env.REACT_APP_FORTMATIC_KEY
-      ).getProvider(),
-    })
-);
-export const fortmaticConnection: Connection = {
-  connector: web3Fortmatic,
-  hooks: web3FortmaticHooks,
-  type: ConnectionType.FORTMATIC,
-};
-
-const [web3CoinbaseWallet, web3CoinbaseWalletHooks] =
+export const [web3CoinbaseWallet, web3CoinbaseWalletHooks] =
   initializeConnector<CoinbaseWallet>(
     (actions) =>
       new CoinbaseWallet({
         actions,
         options: {
           url: RPC_URLS[SupportedChainId.FINDORA],
-          appName: "Uniswap",
+          appName: "Hitall",
         },
         onError,
       })
@@ -110,4 +81,13 @@ export const coinbaseWalletConnection: Connection = {
   connector: web3CoinbaseWallet,
   hooks: web3CoinbaseWalletHooks,
   type: ConnectionType.COINBASE_WALLET,
+};
+
+export const [web3Network, web3NetworkHooks] = initializeConnector<Network>(
+  (actions) => new Network({ actions, urlMap: RPC_URLS, defaultChainId: 1 })
+);
+export const networkConnection: Connection = {
+  connector: web3Network,
+  hooks: web3NetworkHooks,
+  type: ConnectionType.NETWORK,
 };

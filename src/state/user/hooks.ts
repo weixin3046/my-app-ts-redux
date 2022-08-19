@@ -1,6 +1,6 @@
 import { SupportedLocale } from "constants/locales";
 import { useAppDispatch, useAppSelector } from "state/hooks";
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import { updateUserDarkMode, updateUserLocale } from "./reducer";
 import { shallowEqual } from "react-redux";
 

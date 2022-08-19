@@ -1,8 +1,6 @@
 import { Connector } from "@web3-react/types";
 import {
   ConnectionType,
-  fortmaticConnection,
-  gnosisSafeConnection,
   injectedConnection,
   networkConnection,
   walletConnectConnection,
@@ -22,11 +20,9 @@ export function getIsCoinbaseWallet(): boolean {
 }
 
 const CONNECTIONS = [
-  gnosisSafeConnection,
   injectedConnection,
   coinbaseWalletConnection,
   walletConnectConnection,
-  fortmaticConnection,
   networkConnection,
 ];
 export function getConnection(c: Connector | ConnectionType) {
@@ -46,12 +42,9 @@ export function getConnection(c: Connector | ConnectionType) {
         return coinbaseWalletConnection;
       case ConnectionType.WALLET_CONNECT:
         return walletConnectConnection;
-      case ConnectionType.FORTMATIC:
-        return fortmaticConnection;
+
       case ConnectionType.NETWORK:
         return networkConnection;
-      case ConnectionType.GNOSIS_SAFE:
-        return gnosisSafeConnection;
     }
   }
 }
@@ -67,11 +60,8 @@ export function getConnectionName(
       return "Coinbase Wallet";
     case ConnectionType.WALLET_CONNECT:
       return "WalletConnect";
-    case ConnectionType.FORTMATIC:
-      return "Fortmatic";
+
     case ConnectionType.NETWORK:
       return "Network";
-    case ConnectionType.GNOSIS_SAFE:
-      return "Gnosis Safe";
   }
 }

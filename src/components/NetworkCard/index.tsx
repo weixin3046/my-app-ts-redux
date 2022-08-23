@@ -33,10 +33,6 @@ export default function NetworkCard() {
 
   return (
     <>
-      <Button>chainId: {chainId}</Button>
-      <Button>accounts: {accounts}</Button>
-      <Button>isActive: {isActive}</Button>
-      <Button>isActivating: {isActivating}</Button>
       <Button
         onClick={() => {
           void network

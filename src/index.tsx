@@ -2,13 +2,14 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import store from "./state";
-import App from "./pages/App";
+import RoutesPage from "./pages/RoutesPage";
 import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
+// import "./index.less";
 import "./index.css";
 import Web3Provider from "components/Web3Provider";
-import NetworkCard from "components/NetworkCard";
-import MetaMaskCard from "components/MetaMaskCard";
+import WebLayout from "components/Layout";
+import WebConfigProvider from "components/WebConfigProvider";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -18,10 +19,12 @@ root.render(
     <Provider store={store}>
       <HashRouter>
         <Web3Provider>
-          <App />
+          <WebConfigProvider>
+            <WebLayout>
+              <RoutesPage />
+            </WebLayout>
+          </WebConfigProvider>
         </Web3Provider>
-        <MetaMaskCard />
-        <NetworkCard />
       </HashRouter>
     </Provider>
   </React.StrictMode>

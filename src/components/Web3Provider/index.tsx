@@ -1,36 +1,28 @@
-import {
-  useWeb3React,
-  Web3ReactHooks,
-  Web3ReactProvider,
-} from "@web3-react/core";
-import { MetaMask } from "@web3-react/metamask";
-
-import { ReactNode } from "react";
-import { Network } from "@web3-react/network";
-import { hooks as networkHooks, network } from "connection/network";
-import { hooks as metaMaskHooks, metaMask } from "connection/metaMask";
+import { Web3ReactHooks, Web3ReactProvider } from "@web3-react/core";
 import { Connector } from "@web3-react/types";
-
-const connectors: [MetaMask | Network, Web3ReactHooks][] = [
-  [metaMask, metaMaskHooks],
-  [network, networkHooks],
-];
-
-function getName(connector: Connector) {
-  if (connector instanceof Network) return "Network";
-  return "Unknown";
-}
-
-function Child() {
-  const { connector, chainId } = useWeb3React();
-  console.log(`Priority Connector is 看这里啊: ${chainId}`);
-  return null;
-}
+import { ReactNode, useMemo } from "react";
+import useEagerlyConnect from "hooks/useEagerlyConnect";
+import { Connection } from "connection";
+import { getConnectionName } from "connection/utils";
+import useOrderedConnections from "hooks/useOrderedConnections";
 
 export default function Web3Provider({ children }: { children: ReactNode }) {
+  useEagerlyConnect();
+  const connections = useOrderedConnections();
+  const connectors: [Connector, Web3ReactHooks][] = connections.map(
+    ({ hooks, connector }) => [connector, hooks]
+  );
+
+  const key = useMemo(
+    () =>
+      connections
+        .map(({ type }: Connection) => getConnectionName(type))
+        .join("-"),
+    [connectors]
+  );
+
   return (
-    <Web3ReactProvider connectors={connectors}>
-      <Child />
+    <Web3ReactProvider connectors={connectors} key={key}>
       {children}
     </Web3ReactProvider>
   );

@@ -32,10 +32,6 @@ export default function MetaMaskCard() {
 
   return (
     <>
-      <Button>chainId: {chainId}</Button>
-      <Button>accounts: {accounts}</Button>
-      <Button>isActive: {isActive}</Button>
-      <Button>isActivating: {isActivating}</Button>
       <Button
         onClick={() => {
           void metaMask

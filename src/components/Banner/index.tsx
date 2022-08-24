@@ -1,7 +1,8 @@
 import BannerImage from "assets/images/banner.png";
-import { Button, Col, Row, Space, Image } from "antd";
+import { Col, Row, Space, Image } from "antd";
 import { isMobile } from "utils/userAgent";
 import styled from "styled-components";
+import { ButtonDefault, ButtonPrimary } from "components/Button";
 
 const Introduce = styled.div`
   float: right;
@@ -30,9 +31,9 @@ export default function BannerPage() {
               realize private transfer between buyers and sellers
             </Paragraph>
             <div>
-              <Space>
-                <Button type="primary">Import</Button>
-                <Button type="default">Explore</Button>
+              <Space size={36}>
+                <ButtonPrimary>Import</ButtonPrimary>
+                <ButtonDefault>Explore</ButtonDefault>
               </Space>
             </div>
           </Introduce>

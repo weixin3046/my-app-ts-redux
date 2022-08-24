@@ -4,6 +4,7 @@ import { query, variables } from "apollographql/home";
 import { useWeb3React } from "@web3-react/core";
 import Banner from "components/Banner";
 import NetworkCard from "components/NetworkCard";
+import Private from "components/Private";
 
 function HomaPage() {
   const { chainId } = useWeb3React();
@@ -18,6 +19,7 @@ function HomaPage() {
     <div className="App">
       <div>
         <Banner />
+        <Private />
         {/* <NetworkCard></NetworkCard> */}
         {/* <Button type="primary">type="primary"</Button> */}
         {/* <div>{JSON.stringify(data, null, 2)}</div> */}

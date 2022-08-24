@@ -10,9 +10,7 @@ interface WebConfigProviderProps {
 export default function WebConfigProvider({
   children,
 }: WebConfigProviderProps) {
-  const [color, setColor] = useState({
-    primaryColor: "#00E087",
-  });
+  const [color, setColor] = useState({});
   const [darkColor, setDarkColot] = useState({});
   const [dark, setDark] = useState(false);
   const [language, setLanguage] = useState(true);

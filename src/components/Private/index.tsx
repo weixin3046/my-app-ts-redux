@@ -1,31 +1,45 @@
-import { List } from "antd";
+import { Image, List } from "antd";
 import styled from "styled-components";
+import HomeTotal from "assets/images/home-total.svg";
+import HomeFast from "assets/images/home-fast.svg";
+import HomePrivate from "assets/images/home-private.svg";
+import HomeSacure from "assets/images/home-sacure.svg";
+import "./index.less";
 
-const Paragraph = styled.div``;
+const ListWrap = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+`;
 
 export default function PrivatePage() {
   const data = [
     {
+      Avatar: HomeTotal,
       title: "Total",
-      des: "Collection of popular NFTs on the whole network，horizontally expand more NFTs on EVM chains and vertically deepen NFT revenue channels.",
+      description:
+        "Collection of popular NFTs on the whole network，horizontally expand more NFTs on EVM chains and vertically deepen NFT revenue channels.",
     },
     {
+      Avatar: HomeFast,
       title: "Fast",
-      des: "Findora will provide Hitall with enterprise-grade privacy technology and strong liquidity assets to ensure the NFT transactions with low latency and high concurrency.",
+      description:
+        "Findora will provide Hitall with enterprise-grade privacy technology and strong liquidity assets to ensure the NFT transactions with low latency and high concurrency.",
     },
     {
+      Avatar: HomePrivate,
       title: "Private",
-      des: `Hitall will integrate Findora's ZK-rollup technology and ZK-didvoucher system to protect on-chain NFT assets fully privatized or selectively disclosed.`,
+      description: `Hitall will integrate Findora's ZK-rollup technology and ZK-didvoucher system to protect on-chain NFT assets fully privatized or selectively disclosed.`,
     },
     {
+      Avatar: HomeSacure,
       title: "Secure",
-      des: `Users on Hitall can complete sales, purchases and transactions on the findora chain by themselves without revealing sensitive information.
+      description: `Users on Hitall can complete sales, purchases and transactions on the findora chain by themselves without revealing sensitive information.
       `,
     },
   ];
 
   return (
-    <div>
+    <ListWrap className="private-list">
       <List
         grid={{
           gutter: 56,
@@ -39,11 +53,14 @@ export default function PrivatePage() {
         dataSource={data}
         renderItem={(item) => (
           <List.Item>
-            {item.des}
-            {/* <Card title={item.title}>Card content</Card> */}
+            <List.Item.Meta
+              avatar={<Image src={item.Avatar} />}
+              title={item.title}
+              description={item.description}
+            />
           </List.Item>
         )}
       />
-    </div>
+    </ListWrap>
   );
 }

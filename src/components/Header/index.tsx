@@ -22,7 +22,7 @@ const HeaderFrame = styled.div`
   padding: 10px;
   transition: background-position 0.1s, box-shadow 0.1s;
   background-blend-mode: hard-light; //背景混合模式
-  max-width: 1440px;
+  max-width: 1200px;
 `;
 
 const Title = styled.a`

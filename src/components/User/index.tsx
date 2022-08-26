@@ -40,7 +40,6 @@ const WALLET_VIEWS = {
 export default function UserPage() {
   const dispatch = useAppDispatch();
   const { isActive, account, chainId } = useWeb3React();
-  console.log(isActive, chainId, account);
   const [error, setError] = useState(undefined);
   const [visible, setVisible] = useState(false);
   const [pendingConnector, setPendingConnector] = useState<
@@ -70,7 +69,6 @@ export default function UserPage() {
     // ),
   ];
   const onSwitchNav: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
     if (e.key === "switch") return;
     if (e.key === "account") return;
     setVisible(false);

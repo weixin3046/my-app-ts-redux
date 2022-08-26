@@ -23,7 +23,6 @@ export default function NetworkCard() {
   const ENSNames = useENSNames(provider);
 
   const [error, setError] = useState(undefined);
-  console.log(chainId, accounts);
   // attempt to connect eagerly on mount
   useEffect(() => {
     void network.activate().catch(() => {

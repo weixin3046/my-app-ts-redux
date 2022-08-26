@@ -33,7 +33,6 @@ export function useIsDarkMode(): boolean {
     }),
     shallowEqual
   );
-  console.log(userDarkMode);
   return userDarkMode === null ? matchesDarkMode : userDarkMode;
 }
 

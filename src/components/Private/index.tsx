@@ -7,7 +7,7 @@ import HomeSacure from "assets/images/home-sacure.svg";
 import "./index.less";
 
 const ListWrap = styled.div`
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
 `;
 

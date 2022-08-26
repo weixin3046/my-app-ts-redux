@@ -8,9 +8,7 @@ import { useWeb3React } from "@web3-react/core";
 
 async function connect(connector: Connector) {
   try {
-    console.log(22222);
     if (connector.connectEagerly) {
-      console.log(999);
       await connector.connectEagerly();
     } else {
       await connector.activate();
@@ -26,7 +24,6 @@ export default function useEagerlyConnect() {
   const selectedWallet = useAppSelector((state) => state.user.selectedWallet);
 
   let selectedConnection: Connection | undefined;
-  console.log(selectedWallet, "selectedWallet");
   if (selectedWallet) {
     try {
       selectedConnection = getConnection(selectedWallet);
@@ -36,7 +33,6 @@ export default function useEagerlyConnect() {
   }
 
   useEffect(() => {
-    console.log(networkConnection);
     connect(networkConnection.connector);
     if (selectedConnection) {
       connect(selectedConnection.connector);

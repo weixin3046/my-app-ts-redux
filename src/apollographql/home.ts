@@ -18,3 +18,23 @@ export const variables = {
 export const order = 101;
 
 export const type = "util";
+
+export const FeaturedGql = gql`
+  query MyQuery {
+    nftcontracts(orderDirection: desc, first: 30) {
+      name
+      uri
+      symbol
+      standard
+      saleCounts
+      saleAmounts
+      royalties
+      priceCeiling
+      id
+      floorPrice
+      fees
+      avgPrice
+      address
+    }
+  }
+`;

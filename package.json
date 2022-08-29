@@ -59,6 +59,7 @@
     ]
   },
   "devDependencies": {
-    "@types/ua-parser-js": "^0.7.36"
+    "@types/ua-parser-js": "^0.7.36",
+    "postcss-px-to-viewport": "^1.1.1"
   }
 }

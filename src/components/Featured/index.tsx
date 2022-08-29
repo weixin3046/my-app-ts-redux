@@ -1,18 +1,14 @@
-import { Carousel, Col, Row } from "antd";
+import { Carousel, Col, Space } from "antd";
 import styled from "styled-components";
 import DefauldCardPage from "components/ContractCard/DefaultCard";
 import ArrowLeftCircle from "assets/images/arrow-left-circle.svg";
 import ArrowRightCircle from "assets/images/arrow-right-circle.svg";
 import "./index.less";
 import { ButtonDefault } from "components/Button";
-import { useMemo, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { FeaturedGql } from "apollographql/home";
-
-const Content = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-`;
+import { Content } from "components/Content";
+import { isMobile } from "utils/userAgent";
 
 const LaunchpadWrap = styled.div`
   padding-top: 105px;
@@ -31,45 +27,35 @@ const Title = styled.div`
 `;
 
 export default function FeaturedPage() {
-  const [list, setList] = useState<any[]>();
+  // const [list, setList] = useState<any[]>();
   const { data } = useQuery(FeaturedGql);
 
   const onChange = (currentSlide: number) => {
     console.log(currentSlide);
   };
-
-  useMemo(() => {
-    if (!data) return;
-    var result = [];
-    for (var i = 0, len = data.nftcontracts.length; i < len; i += 3) {
-      result.push(data.nftcontracts.slice(i, i + 3));
-    }
-    setList(result);
-  }, [data]);
-
+  console.log(data);
   return (
     <Content>
       <Title>Featured Projects</Title>
+
       <Carousel
         afterChange={onChange}
         arrows={true}
         nextArrow={<img src={ArrowLeftCircle} alt="prev" />}
         prevArrow={<img src={ArrowRightCircle} alt="next" />}
         dots={{ className: "carousel-dots" }}
+        slidesToShow={isMobile ? 1 : 3}
+        slidesToScroll={isMobile ? 1 : 3}
       >
-        {list?.map((arr, index) => (
-          <div key={index}>
-            <Row gutter={[26, 0]}>
-              {arr.map((item: any) => (
-                <Col span={8} key={item.id}>
-                  <DefauldCardPage
-                    item={item}
-                    ImageSize={290}
-                    height={461}
-                  ></DefauldCardPage>
-                </Col>
-              ))}
-            </Row>
+        {data?.nftcontracts?.map((item: any) => (
+          <div key={item.id}>
+            <div style={{ padding: "0 13px" }}>
+              <DefauldCardPage
+                item={item}
+                ImageSize={290}
+                height={461}
+              ></DefauldCardPage>
+            </div>
           </div>
         ))}
       </Carousel>

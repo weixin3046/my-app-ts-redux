@@ -3,25 +3,29 @@ import { Col, Row, Space, Image } from "antd";
 import { isMobile } from "utils/userAgent";
 import styled from "styled-components";
 import { ButtonDefault, ButtonPrimary } from "components/Button";
+import { Content } from "components/Content";
 
 const Introduce = styled.div`
-  float: right;
-  padding-top: 149px;
-  width: ${(props: { isMobile: boolean }) =>
-    props.isMobile ? "100%" : "640px"};
+  /* padding-top: 100px; */
+
   text-align: ${(props: { isMobile: boolean }) =>
     props.isMobile ? "center" : ""};
 `;
 const Title = styled.h2`
   font-weight: 600;
+  line-height: 120%;
   font-size: 60px;
 `;
 
-const Paragraph = styled.div``;
+const Paragraph = styled.div`
+  font-size: 24px;
+  line-height: 150%;
+  padding-bottom: 60px;
+`;
 
 export default function BannerPage() {
   return (
-    <div>
+    <Content>
       <Row align="middle" justify={"center"}>
         <Col xl={12} md={24}>
           <Introduce isMobile={isMobile}>
@@ -31,7 +35,12 @@ export default function BannerPage() {
               realize private transfer between buyers and sellers
             </Paragraph>
             <div>
-              <Space size={36}>
+              <Space
+                size={36}
+                wrap
+                align={"center"}
+                style={{ justifyContent: "center" }}
+              >
                 <ButtonPrimary>Import</ButtonPrimary>
                 <ButtonDefault>Explore</ButtonDefault>
               </Space>
@@ -42,6 +51,6 @@ export default function BannerPage() {
           <Image src={BannerImage} preview={false}></Image>
         </Col>
       </Row>
-    </div>
+    </Content>
   );
 }

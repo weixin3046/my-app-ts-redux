@@ -1,8 +1,8 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { Suspense } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
 import HomaPage from "./Home";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import Header from "components/Header";
+import ExplorePage from "./Explore";
 // const { Header, Footer, Sider, Content } = Layout;
 
 const client = new ApolloClient({
@@ -14,9 +14,15 @@ export default function RoutesPage() {
   return (
     <div className="App">
       <ApolloProvider client={client}>
-        <Routes>
-          <Route path="/" element={<HomaPage />} />
-        </Routes>
+        <Suspense fallback={<p>loading</p>}>
+          <Routes>
+            <Route path="/" element={<HomaPage />} />
+            <Route path="/Explore" element={<ExplorePage />} />
+            <Route path="*" element={<Navigate to="/" />} />
+            {/* <Route path="/" element={<HomaPage />} /> */}
+            {/* <Route path="/" element={<Explore />} /> */}
+          </Routes>
+        </Suspense>
       </ApolloProvider>
     </div>
   );

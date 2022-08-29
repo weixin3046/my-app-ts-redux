@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "./state";
 import RoutesPage from "./pages/RoutesPage";
 import reportWebVitals from "./reportWebVitals";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 // import "./index.less";
 import "./index.css";
 import Web3Provider from "components/Web3Provider";
@@ -17,7 +17,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <HashRouter>
+      <BrowserRouter>
         <Web3Provider>
           <WebConfigProvider>
             <WebLayout>
@@ -25,7 +25,7 @@ root.render(
             </WebLayout>
           </WebConfigProvider>
         </Web3Provider>
-      </HashRouter>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

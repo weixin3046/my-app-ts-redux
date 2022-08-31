@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PUBLIC_URL: https://nft-sale.github.io/my-app-ts-redux/
+      PUBLIC_URL: https://weixin3046.github.io/my-app-ts-redux/
 
     steps:
       - uses: actions/checkout@v3

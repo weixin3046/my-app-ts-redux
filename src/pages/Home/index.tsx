@@ -15,7 +15,6 @@ function HomaPage() {
         <TopCollections />
         <Rewards />
         <CooperationPage />
-        <div>测试一下</div>
         {/* <NetworkCard></NetworkCard> */}
         {/* <Button type="primary">type="primary"</Button> */}
         {/* <div>{JSON.stringify(data, null, 2)}</div> */}

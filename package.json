@@ -2,6 +2,7 @@
   "name": "my-app-ts-redux",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://weixin3046.github.io/my-app-ts-redux",
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@craco/craco": "^6.4.5",

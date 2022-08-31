@@ -3,13 +3,13 @@ import BannerImage from "assets/images/banner.png";
 import { ButtonDefault, ButtonPrimary } from "components/Button";
 import { Content } from "components/Content";
 import styled from "styled-components";
-import { isMobile } from "utils/userAgent";
 
 const Introduce = styled.div`
   /* padding-top: 100px; */
 
-  text-align: ${(props: { isMobile: boolean }) =>
-    props.isMobile ? "center" : ""};
+  @media screen and (max-width: 1200px) {
+    text-align: center;
+  }
 `;
 const Title = styled.h2`
   font-weight: 600;
@@ -28,7 +28,7 @@ export default function BannerPage() {
     <Content>
       <Row align="middle" justify={"center"}>
         <Col xl={12} md={24}>
-          <Introduce isMobile={isMobile}>
+          <Introduce>
             <Title>Create Your First Private NFT</Title>
             <Paragraph>
               Create the first private NFT belonging to you on findora to

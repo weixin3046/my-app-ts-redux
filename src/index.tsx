@@ -6,7 +6,7 @@ import WebConfigProvider from "components/WebConfigProvider";
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import RoutesPage from "./pages/RoutesPage";
 import reportWebVitals from "./reportWebVitals";
@@ -18,15 +18,15 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Web3Provider>
-        <WebConfigProvider>
-          <HashRouter>
+      <BrowserRouter>
+        <Web3Provider>
+          <WebConfigProvider>
             <WebLayout>
               <RoutesPage />
             </WebLayout>
-          </HashRouter>
-        </WebConfigProvider>
-      </Web3Provider>
+          </WebConfigProvider>
+        </Web3Provider>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

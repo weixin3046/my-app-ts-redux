@@ -66,7 +66,7 @@ export default function TopCollectionsPage() {
         grid={{
           gutter: 75,
           xs: 1,
-          sm: 2,
+          sm: 1,
           md: 2,
           lg: 2,
           xl: 3,

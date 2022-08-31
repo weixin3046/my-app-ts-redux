@@ -1,12 +1,12 @@
 import { ArrowUpOutlined } from "@ant-design/icons";
-import { Button, Input, Space, Typography } from "antd";
+import { Button, Input, Typography } from "antd";
 import React from "react";
 import styled from "styled-components";
 const { Title, Paragraph } = Typography;
 
 const Cooperation = styled.div`
   background: linear-gradient(90deg, #00e087 0.18%, #00aaff 100.18%);
-  padding: 106px 0;
+  padding: 106px 30px;
 `;
 
 const Email = styled.div`
@@ -16,7 +16,7 @@ const Email = styled.div`
   border: 1px solid #fff;
   background: #fff;
   height: 60px;
-  /* width: 587px; */
+  width: 100%;
   border-radius: 8px;
   padding-left: 16px;
   padding-right: 8px;
@@ -47,7 +47,7 @@ const CooperationPage = () => {
           Be the first to get updates on the Hitall launch, the latest features,
           and upcoming airdrops and events.
         </Paragraph>
-        <Space>
+        <div style={{ maxWidth: "587px", margin: "0 auto" }}>
           <Email>
             <Input
               style={{ width: "calc(100% - 60px)" }}
@@ -60,7 +60,7 @@ const CooperationPage = () => {
               icon={<ArrowUpOutlined style={{ fontSize: "25px" }} />}
             ></EmailButton>
           </Email>
-        </Space>
+        </div>
       </Typography>
     </Cooperation>
   );

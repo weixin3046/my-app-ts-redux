@@ -1,8 +1,9 @@
-import { Card, Image, Button, Avatar, Space } from "antd";
-import styled from "styled-components";
-import { UserOutlined } from "@ant-design/icons";
-import NoImage from "assets/images/no-image.svg";
 import "./inddex.less";
+
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar, Button, Card, Image, Space } from "antd";
+import NoImage from "assets/images/no-image.svg";
+import styled from "styled-components";
 const { Meta } = Card;
 
 const MetaTitle = styled.div`
@@ -43,7 +44,7 @@ export default function DefauldCardPage({
         hoverable
         cover={<Image preview={false} src={NoImage} fallback={"NoImage"} />}
         actions={[
-          <div>
+          <div key="buynow">
             <Time>3 days left</Time>
             <BuyButton block className="buy-button">
               Buy Now

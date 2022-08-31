@@ -1,5 +1,6 @@
 import { List } from "antd";
 import { AvatarSize } from "antd/lib/avatar/SizeContext";
+
 import DefauldCardPage from "./DefaultCard";
 
 interface ContractCardPageProps {

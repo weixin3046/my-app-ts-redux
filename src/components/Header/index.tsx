@@ -2,6 +2,7 @@ import { Menu } from "antd";
 import Logo from "assets/images/logo.svg";
 import User from "components/User";
 import { AlignJustify } from "react-feather";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = styled.div`
@@ -66,19 +67,20 @@ const HeaderElement = styled.div`
 `;
 
 const HeaderPage = () => {
+  const navigate = useNavigate();
   const selectChange = (value: any) => {
     switch (value) {
       case "home":
-        window.location.href = "/";
+        navigate("/");
         break;
       case "/Explore":
-        window.location.href = "/Explore";
+        navigate("/Explore");
         break;
       case "/Rankings":
-        window.location.href = "/Rankings";
+        navigate("/Rankings");
         break;
       case "/Rewards":
-        window.location.href = "/Rewards";
+        navigate("/Rewards");
         break;
     }
   };

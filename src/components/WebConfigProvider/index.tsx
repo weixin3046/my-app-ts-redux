@@ -10,10 +10,10 @@ interface WebConfigProviderProps {
 export default function WebConfigProvider({
   children,
 }: WebConfigProviderProps) {
-  const [color, setColor] = useState({});
-  const [darkColor, setDarkColot] = useState({});
-  const [dark, setDark] = useState(false);
-  const [language, setLanguage] = useState(true);
+  const [color] = useState({});
+  const [darkColor] = useState({});
+  const [dark] = useState(false);
+  const [language] = useState(true);
   ConfigProvider.config({
     theme: dark ? darkColor : color,
   });

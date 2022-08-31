@@ -1,4 +1,3 @@
-// import "./index.less";
 import "./index.css";
 
 import WebLayout from "components/Layout";
@@ -13,7 +12,7 @@ import RoutesPage from "./pages/RoutesPage";
 import reportWebVitals from "./reportWebVitals";
 import store from "./state";
 
-const container = document.getElementById("root")!;
+const container = document.getElementById("root") as HTMLElement;
 const root = createRoot(container);
 
 root.render(

@@ -27,6 +27,6 @@ export default function useGetNftUri(uri: string) {
     if (uri) {
       run(uri);
     }
-  }, [uri]);
+  }, [uri, run]);
   return { data, error, loading };
 }

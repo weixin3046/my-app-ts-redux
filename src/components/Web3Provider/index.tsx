@@ -18,7 +18,7 @@ export default function Web3Provider({ children }: { children: ReactNode }) {
       connections
         .map(({ type }: Connection) => getConnectionName(type))
         .join("-"),
-    [connectors]
+    [connections]
   );
 
   return (

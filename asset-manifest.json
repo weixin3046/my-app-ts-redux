@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "https://weixin3046.github.io/my-app-ts-redux/static/css/main.9badd33e.chunk.css",
-    "main.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/main.462b52ef.chunk.js",
-    "main.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/main.462b52ef.chunk.js.map",
-    "runtime-main.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/runtime-main.a1f5c2c6.js",
-    "runtime-main.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/runtime-main.a1f5c2c6.js.map",
+    "main.css": "https://weixin3046.github.io/my-app-ts-redux/static/css/main.47d32078.chunk.css",
+    "main.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/main.341aa5ca.chunk.js",
+    "main.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/main.341aa5ca.chunk.js.map",
+    "runtime-main.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/runtime-main.aae8e64e.js",
+    "runtime-main.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/runtime-main.aae8e64e.js.map",
     "static/css/2.6d56ab43.chunk.css": "https://weixin3046.github.io/my-app-ts-redux/static/css/2.6d56ab43.chunk.css",
-    "static/js/2.c0ba97eb.chunk.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/2.c0ba97eb.chunk.js",
-    "static/js/2.c0ba97eb.chunk.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/2.c0ba97eb.chunk.js.map",
-    "static/js/3.7f4a7cd6.chunk.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/3.7f4a7cd6.chunk.js",
-    "static/js/3.7f4a7cd6.chunk.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/3.7f4a7cd6.chunk.js.map",
+    "static/js/2.b621b193.chunk.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/2.b621b193.chunk.js",
+    "static/js/2.b621b193.chunk.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/2.b621b193.chunk.js.map",
+    "static/js/3.de704f82.chunk.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/3.de704f82.chunk.js",
+    "static/js/3.de704f82.chunk.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/3.de704f82.chunk.js.map",
     "index.html": "https://weixin3046.github.io/my-app-ts-redux/index.html",
     "static/css/2.6d56ab43.chunk.css.map": "https://weixin3046.github.io/my-app-ts-redux/static/css/2.6d56ab43.chunk.css.map",
-    "static/css/main.9badd33e.chunk.css.map": "https://weixin3046.github.io/my-app-ts-redux/static/css/main.9badd33e.chunk.css.map",
-    "static/js/2.c0ba97eb.chunk.js.LICENSE.txt": "https://weixin3046.github.io/my-app-ts-redux/static/js/2.c0ba97eb.chunk.js.LICENSE.txt",
+    "static/css/main.47d32078.chunk.css.map": "https://weixin3046.github.io/my-app-ts-redux/static/css/main.47d32078.chunk.css.map",
+    "static/js/2.b621b193.chunk.js.LICENSE.txt": "https://weixin3046.github.io/my-app-ts-redux/static/js/2.b621b193.chunk.js.LICENSE.txt",
     "static/media/arrow-left-circle.e0358dd2.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/arrow-left-circle.e0358dd2.svg",
     "static/media/arrow-right-circle.aa3dcc6d.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/arrow-right-circle.aa3dcc6d.svg",
     "static/media/banner.1736eb80.png": "https://weixin3046.github.io/my-app-ts-redux/static/media/banner.1736eb80.png",
@@ -26,10 +26,10 @@
     "static/media/rewards.82348705.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/rewards.82348705.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a1f5c2c6.js",
+    "static/js/runtime-main.aae8e64e.js",
     "static/css/2.6d56ab43.chunk.css",
-    "static/js/2.c0ba97eb.chunk.js",
-    "static/css/main.9badd33e.chunk.css",
-    "static/js/main.462b52ef.chunk.js"
+    "static/js/2.b621b193.chunk.js",
+    "static/css/main.47d32078.chunk.css",
+    "static/js/main.341aa5ca.chunk.js"
   ]
 }

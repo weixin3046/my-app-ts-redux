@@ -1,9 +1,9 @@
+import { Col, Image, Row, Space } from "antd";
 import BannerImage from "assets/images/banner.png";
-import { Col, Row, Space, Image } from "antd";
-import { isMobile } from "utils/userAgent";
-import styled from "styled-components";
 import { ButtonDefault, ButtonPrimary } from "components/Button";
 import { Content } from "components/Content";
+import styled from "styled-components";
+import { isMobile } from "utils/userAgent";
 
 const Introduce = styled.div`
   /* padding-top: 100px; */

@@ -1,9 +1,9 @@
 import Banner from "components/Banner";
-import Private from "components/Private";
-import Featured from "components/Featured";
-import TopCollections from "components/TopCollections";
-import Rewards from "components/Rewards";
 import CooperationPage from "components/Cooperation/Cooperation";
+import Featured from "components/Featured";
+import Private from "components/Private";
+import Rewards from "components/Rewards";
+import TopCollections from "components/TopCollections";
 
 function HomaPage() {
   return (

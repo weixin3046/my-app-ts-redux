@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TransactionDetails } from "./types";
+
 import { updateVersion } from "../global/actions";
+import { TransactionDetails } from "./types";
 
 const now = () => new Date().getTime();
 

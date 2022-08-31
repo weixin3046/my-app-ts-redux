@@ -1,8 +1,8 @@
 import { Menu } from "antd";
-import { AlignJustify } from "react-feather";
 import Logo from "assets/images/logo.svg";
-import styled from "styled-components";
 import User from "components/User";
+import { AlignJustify } from "react-feather";
+import styled from "styled-components";
 
 const Header = styled.div`
   width: 100%;

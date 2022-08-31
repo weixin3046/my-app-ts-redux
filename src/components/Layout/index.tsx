@@ -1,7 +1,8 @@
+import "./index.less";
+
 import { Layout } from "antd";
 import Header from "components/Header";
 import React from "react";
-import "./index.less";
 
 const { Content, Footer } = Layout;
 interface WebLayoutProps {

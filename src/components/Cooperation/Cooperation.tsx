@@ -1,7 +1,7 @@
+import { ArrowUpOutlined } from "@ant-design/icons";
 import { Button, Input, Space, Typography } from "antd";
 import React from "react";
 import styled from "styled-components";
-import { ArrowUpOutlined } from "@ant-design/icons";
 const { Title, Paragraph } = Typography;
 
 const Cooperation = styled.div`

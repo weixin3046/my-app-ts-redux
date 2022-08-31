@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { SupportedLocale } from "constants/locales";
 import { ConnectionType } from "connection";
+import { SupportedLocale } from "constants/locales";
 const currentTimestamp = () => new Date().getTime();
 
 export interface UserState {

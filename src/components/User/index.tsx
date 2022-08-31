@@ -1,16 +1,15 @@
-import { useWeb3React } from "@web3-react/core";
-import { Avatar, Button, Drawer, Image, Menu, Space, MenuProps } from "antd";
-import { useState, useCallback } from "react";
-import { CloseCircleOutlined } from "@ant-design/icons";
-import { shortenAddress } from "utils";
-import { useNavigate } from "react-router-dom";
 import "./index.css";
+
+import { useWeb3React } from "@web3-react/core";
+import { Connector } from "@web3-react/types";
+import { Avatar, Button, Image, MenuProps } from "antd";
+import { injectedConnection } from "connection";
+import { getConnection } from "connection/utils";
+import { useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { updateConnectionError } from "state/connection/reducer";
 import { useAppDispatch } from "state/hooks";
 import { updateSelectedWallet } from "state/user/reducer";
-import { getConnection } from "connection/utils";
-import { Connector } from "@web3-react/types";
-import { updateConnectionError } from "state/connection/reducer";
-import { injectedConnection } from "connection";
 
 type MenuItem = Required<MenuProps>["items"][number];
 function getItem(

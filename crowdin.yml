@@ -1,10 +1,10 @@
 #
 # Your Crowdin credentials
 #
-"project_id" : "527932"
-"api_token" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ3UUVxdmhVM3ZMT2EyWGljbVV5VCIsImp0aSI6ImViYTY3ZDUyOTE2ZjE0NDVlYTBkNTU5ZGI0NDk0NDg3MWE3ZTVjY2M5OWI1YTEzZGZiMmU5YjRlYTFlODYwOTE5MzQyZjA1YTEyZjBlOWI0IiwiaWF0IjoxNjU4MzEwNDUwLCJuYmYiOjE2NTgzMTA0NTAsImV4cCI6MTY2MDkwMjQ1MCwic3ViIjoiMTUyMjIxODYiLCJkb21haW4iOm51bGwsInNjb3BlcyI6WyJwcm9qZWN0Il0sImFzc29jaWF0aW9ucyI6WyIqIl0sInNlc3Npb24iOjB9.j1kdI6GOHpW3bFmzyKg5zaCqImZ0uxC-Bk6qzfD0_pB-wKVp-ju8K8CgxR67l60s0jq30L22AMrwkIkfoSUJ6Lkfh8nnnxtGVWvI8VoZeCOd9G_AZsA4H7I2LfmVAkAkuG8uQQsTI5QXgeNm09If6_kf-UNcl593oSMfMg_zLB1q0CnRRPnkvj1UAN-aQNnlYkzmd53XzRHwXTUdVw8N61dnegUaJyxgblk379AxwJA5WI9SQzVA0R7JobhFuZ-ko6wRPdWIFmdbQYmaT7tkYOEvr5mwgJAIL_MqTPUrVvcNgPtqLA9_le43nP6ehx7Y-8GCIebXbqtdpvhcRqr5ZYn7QxN-w5gqpZ3Vj-vIlUTYlt70-tAe2lCxcnkyNkVH0gMsYi21ZL9ErRQGiwqjIpbo1VKE7QQ_eFNAfgR_pCyNI5gPkV1UeaA_uUdNGmGAArhFJ75fqPoT3VcEOMIl8lL42DVQTLeaayZPP8_M1MCukBDCLQq1skXsCfKoDumAgHfud_rezP_kz4K2LSGT6QRFuNH_zTon8Tv1__I0N_OmVtJMlAALlQuDBtyx1emeH6bdwTnn4jxY8JtwzAGO0M2WSjWmJM-i2pWx_LhYDjnuVWDvMYwM6wDO308x2SwTvaC_5mBV7CsmYuYTXdyD7ETQZb6jNAlNqOiSmRRxJA8"
-"base_path" : "nft-sale"
-"base_url" : "https://api.crowdin.com"
+"project_id": "527932"
+"api_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ3UUVxdmhVM3ZMT2EyWGljbVV5VCIsImp0aSI6ImViYTY3ZDUyOTE2ZjE0NDVlYTBkNTU5ZGI0NDk0NDg3MWE3ZTVjY2M5OWI1YTEzZGZiMmU5YjRlYTFlODYwOTE5MzQyZjA1YTEyZjBlOWI0IiwiaWF0IjoxNjU4MzEwNDUwLCJuYmYiOjE2NTgzMTA0NTAsImV4cCI6MTY2MDkwMjQ1MCwic3ViIjoiMTUyMjIxODYiLCJkb21haW4iOm51bGwsInNjb3BlcyI6WyJwcm9qZWN0Il0sImFzc29jaWF0aW9ucyI6WyIqIl0sInNlc3Npb24iOjB9.j1kdI6GOHpW3bFmzyKg5zaCqImZ0uxC-Bk6qzfD0_pB-wKVp-ju8K8CgxR67l60s0jq30L22AMrwkIkfoSUJ6Lkfh8nnnxtGVWvI8VoZeCOd9G_AZsA4H7I2LfmVAkAkuG8uQQsTI5QXgeNm09If6_kf-UNcl593oSMfMg_zLB1q0CnRRPnkvj1UAN-aQNnlYkzmd53XzRHwXTUdVw8N61dnegUaJyxgblk379AxwJA5WI9SQzVA0R7JobhFuZ-ko6wRPdWIFmdbQYmaT7tkYOEvr5mwgJAIL_MqTPUrVvcNgPtqLA9_le43nP6ehx7Y-8GCIebXbqtdpvhcRqr5ZYn7QxN-w5gqpZ3Vj-vIlUTYlt70-tAe2lCxcnkyNkVH0gMsYi21ZL9ErRQGiwqjIpbo1VKE7QQ_eFNAfgR_pCyNI5gPkV1UeaA_uUdNGmGAArhFJ75fqPoT3VcEOMIl8lL42DVQTLeaayZPP8_M1MCukBDCLQq1skXsCfKoDumAgHfud_rezP_kz4K2LSGT6QRFuNH_zTon8Tv1__I0N_OmVtJMlAALlQuDBtyx1emeH6bdwTnn4jxY8JtwzAGO0M2WSjWmJM-i2pWx_LhYDjnuVWDvMYwM6wDO308x2SwTvaC_5mBV7CsmYuYTXdyD7ETQZb6jNAlNqOiSmRRxJA8"
+"base_path": "nft-sale"
+"base_url": "https://api.crowdin.com"
 
 #
 # Choose file structure in Crowdin
@@ -16,112 +16,111 @@
 # Files configuration
 #
 files: [
- {
-  #
-  # Source files filter
-  # e.g. "/resources/en/*.json"
-  #
-  "source" : "",
+    {
+      #
+      # Source files filter
+      # e.g. "/resources/en/*.json"
+      #
+      "source": "",
 
-  #
-  # Where translations will be placed
-  # e.g. "/resources/%two_letters_code%/%original_file_name%"
-  #
-  "translation" : "",
+      #
+      # Where translations will be placed
+      # e.g. "/resources/%two_letters_code%/%original_file_name%"
+      #
+      "translation": "",
+      #
+      # Files or directories for ignore
+      # e.g. ["/**/?.txt", "/**/[0-9].txt", "/**/*\?*.txt"]
+      #
+      #"ignore" : [],
 
-  #
-  # Files or directories for ignore
-  # e.g. ["/**/?.txt", "/**/[0-9].txt", "/**/*\?*.txt"]
-  #
-  #"ignore" : [],
+      #
+      # The dest allows you to specify a file name in Crowdin
+      # e.g. "/messages.json"
+      #
+      #"dest" : "",
 
-  #
-  # The dest allows you to specify a file name in Crowdin
-  # e.g. "/messages.json"
-  #
-  #"dest" : "",
+      #
+      # File type
+      # e.g. "json"
+      #
+      #"type" : "",
 
-  #
-  # File type
-  # e.g. "json"
-  #
-  #"type" : "",
+      #
+      # The parameter "update_option" is optional. If it is not set, after the files update the translations for changed strings will be removed. Use to fix typos and for minor changes in the source strings
+      # e.g. "update_as_unapproved" or "update_without_changes"
+      #
+      #"update_option" : "",
 
-  #
-  # The parameter "update_option" is optional. If it is not set, after the files update the translations for changed strings will be removed. Use to fix typos and for minor changes in the source strings
-  # e.g. "update_as_unapproved" or "update_without_changes"
-  #
-  #"update_option" : "",
+      #
+      # Start block (for XML only)
+      #
 
-  #
-  # Start block (for XML only)
-  #
+      #
+      # Defines whether to translate tags attributes.
+      # e.g. 0 or 1  (Default is 1)
+      #
+      # "translate_attributes" : 1,
 
-  #
-  # Defines whether to translate tags attributes.
-  # e.g. 0 or 1  (Default is 1)
-  #
-  # "translate_attributes" : 1,
+      #
+      # Defines whether to translate texts placed inside the tags.
+      # e.g. 0 or 1 (Default is 1)
+      #
+      # "translate_content" : 1,
 
-  #
-  # Defines whether to translate texts placed inside the tags.
-  # e.g. 0 or 1 (Default is 1)
-  #
-  # "translate_content" : 1,
+      #
+      # This is an array of strings, where each item is the XPaths to DOM element that should be imported
+      # e.g. ["/content/text", "/content/text[@value]"]
+      #
+      # "translatable_elements" : [],
 
-  #
-  # This is an array of strings, where each item is the XPaths to DOM element that should be imported
-  # e.g. ["/content/text", "/content/text[@value]"]
-  #
-  # "translatable_elements" : [],
+      #
+      # Defines whether to split long texts into smaller text segments
+      # e.g. 0 or 1 (Default is 1)
+      #
+      # "content_segmentation" : 1,
 
-  #
-  # Defines whether to split long texts into smaller text segments
-  # e.g. 0 or 1 (Default is 1)
-  #
-  # "content_segmentation" : 1,
+      #
+      # End block (for XML only)
+      #
 
-  #
-  # End block (for XML only)
-  #
+      #
+      # Start .properties block
+      #
 
-  #
-  # Start .properties block
-  #
+      #
+      # Defines whether single quote should be escaped by another single quote or backslash in exported translations
+      # e.g. 0 or 1 or 2 or 3 (Default is 3)
+      # 0 - do not escape single quote;
+      # 1 - escape single quote by another single quote;
+      # 2 - escape single quote by backslash;
+      # 3 - escape single quote by another single quote only in strings containing variables ( {0} ).
+      #
+      # "escape_quotes" : 3,
 
-  #
-  # Defines whether single quote should be escaped by another single quote or backslash in exported translations
-  # e.g. 0 or 1 or 2 or 3 (Default is 3)
-  # 0 - do not escape single quote;
-  # 1 - escape single quote by another single quote;
-  # 2 - escape single quote by backslash;
-  # 3 - escape single quote by another single quote only in strings containing variables ( {0} ).
-  #
-  # "escape_quotes" : 3,
+      #
+      # Defines whether any special characters (=, :, ! and #) should be escaped by backslash in exported translations.
+      # e.g. 0 or 1 (Default is 0)
+      # 0 - do not escape special characters
+      # 1 - escape special characters by a backslash
+      #
+      # "escape_special_characters": 0
+      #
 
-  #
-  # Defines whether any special characters (=, :, ! and #) should be escaped by backslash in exported translations.
-  # e.g. 0 or 1 (Default is 0)
-  # 0 - do not escape special characters
-  # 1 - escape special characters by a backslash
-  #
-  # "escape_special_characters": 0
-  #
+      #
+      # End .properties block
+      #
 
-  #
-  # End .properties block
-  #
+      #
+      # Does the first line contain header?
+      # e.g. true or false
+      #
+      #"first_line_contains_header" : true,
 
-  #
-  # Does the first line contain header?
-  # e.g. true or false
-  #
-  #"first_line_contains_header" : true,
-
-  #
-  # for spreadsheets
-  # e.g. "identifier,source_phrase,context,uk,ru,fr"
-  #
-  # "scheme" : "",
- }
-]
+      #
+      # for spreadsheets
+      # e.g. "identifier,source_phrase,context,uk,ru,fr"
+      #
+      # "scheme" : "",
+    },
+  ]

@@ -1,6 +1,4 @@
-import { useQuery } from "@apollo/client";
-import { List, Avatar, Space } from "antd";
-import { FeaturedGql } from "apollographql/home";
+import { Avatar, List, Space } from "antd";
 import { ButtonDefault } from "components/Button";
 import { Content } from "components/Content";
 import styled from "styled-components";

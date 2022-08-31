@@ -1,8 +1,9 @@
-import React, { Suspense } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
-import HomaPage from "./Home";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import React, { Suspense } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+
 import ExplorePage from "./Explore";
+import HomaPage from "./Home";
 // const { Header, Footer, Sider, Content } = Layout;
 
 const client = new ApolloClient({

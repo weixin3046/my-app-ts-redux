@@ -1,13 +1,14 @@
-import { Carousel, Col, Space } from "antd";
-import styled from "styled-components";
-import DefauldCardPage from "components/ContractCard/DefaultCard";
+import "./index.less";
+
+import { useQuery } from "@apollo/client";
+import { Carousel } from "antd";
+import { FeaturedGql } from "apollographql/home";
 import ArrowLeftCircle from "assets/images/arrow-left-circle.svg";
 import ArrowRightCircle from "assets/images/arrow-right-circle.svg";
-import "./index.less";
 import { ButtonDefault } from "components/Button";
-import { useQuery } from "@apollo/client";
-import { FeaturedGql } from "apollographql/home";
 import { Content } from "components/Content";
+import DefauldCardPage from "components/ContractCard/DefaultCard";
+import styled from "styled-components";
 import { isMobile } from "utils/userAgent";
 
 const LaunchpadWrap = styled.div`
@@ -60,7 +61,13 @@ export default function FeaturedPage() {
         ))}
       </Carousel>
       <LaunchpadWrap>
-        <ButtonDefault onClick={() => {}}>Launchpad</ButtonDefault>
+        <ButtonDefault
+          onClick={() => {
+            console.log("lanchpad");
+          }}
+        >
+          Launchpad
+        </ButtonDefault>
       </LaunchpadWrap>
     </Content>
   );

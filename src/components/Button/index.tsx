@@ -1,6 +1,5 @@
-import { Button, ButtonProps } from "antd";
-import { Check, ChevronDown } from "react-feather";
-import styled, { useTheme } from "styled-components/macro";
+import { Button } from "antd";
+import styled from "styled-components/macro";
 
 export const ButtonBase = styled(Button)`
   font-weight: 600;

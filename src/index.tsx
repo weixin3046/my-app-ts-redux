@@ -1,15 +1,17 @@
+// import "./index.less";
+import "./index.css";
+
+import WebLayout from "components/Layout";
+import Web3Provider from "components/Web3Provider";
+import WebConfigProvider from "components/WebConfigProvider";
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import store from "./state";
+import { BrowserRouter } from "react-router-dom";
+
 import RoutesPage from "./pages/RoutesPage";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-// import "./index.less";
-import "./index.css";
-import Web3Provider from "components/Web3Provider";
-import WebLayout from "components/Layout";
-import WebConfigProvider from "components/WebConfigProvider";
+import store from "./state";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);

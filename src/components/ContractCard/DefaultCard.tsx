@@ -1,12 +1,13 @@
-import { Card, Image, Typography, Avatar, Space, Spin } from "antd";
-import styled from "styled-components";
-import { UserOutlined } from "@ant-design/icons";
-import NoImage from "assets/images/no-image.svg";
 import "./inddex.less";
+
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar, Card, Image, Space, Spin, Typography } from "antd";
+import NoImage from "assets/images/no-image.svg";
 import useGetNftUri from "hooks/useGetNftUri";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 const { Meta } = Card;
-const { Paragraph, Text } = Typography;
+const { Paragraph } = Typography;
 
 const MetaTitle = styled.div`
   text-align: center;
@@ -37,7 +38,7 @@ export default function DefauldCardPage({
   ImageSize,
   height,
 }: DefauldCardPageProps) {
-  const { data, error, loading } = useGetNftUri(item.uri);
+  const { data, loading } = useGetNftUri(item.uri);
   return (
     <>
       <Link to={"/Explore/" + item.address} key={item.id}>

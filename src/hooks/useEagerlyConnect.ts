@@ -1,10 +1,9 @@
 import { Connector } from "@web3-react/types";
 import { Connection, networkConnection } from "connection";
+import { getConnection } from "connection/utils";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "state/hooks";
-import { getConnection } from "connection/utils";
 import { updateSelectedWallet } from "state/user/reducer";
-import { useWeb3React } from "@web3-react/core";
 
 async function connect(connector: Connector) {
   try {

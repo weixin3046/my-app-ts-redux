@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query/react";
+
 import { updateVersion } from "../global/actions";
-import user from "./user/reducer";
-import transactions from "./transactions/reducer";
-import connection from "./connection/reducer";
 import application from "./application/reducer";
+import connection from "./connection/reducer";
+import transactions from "./transactions/reducer";
+import user from "./user/reducer";
 
 const store = configureStore({
   reducer: {

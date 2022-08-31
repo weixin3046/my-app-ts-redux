@@ -7,7 +7,10 @@ function getNftUri(uri: string): Promise<any> {
     axios
       .get(uri)
       .then((res: any) => {
-        var image = res.data.image.replace("ipfs://", "https://ipfs.io/ipfs/");
+        const image = res.data.image.replace(
+          "ipfs://",
+          "https://ipfs.io/ipfs/"
+        );
         resolve({
           ...res.data,
           image,

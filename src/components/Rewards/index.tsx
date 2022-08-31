@@ -1,6 +1,6 @@
 import { Col, Row, Typography } from "antd";
-import { Content } from "components/Content";
 import RewardsImage from "assets/images/rewards.svg";
+import { Content } from "components/Content";
 const { Title, Paragraph } = Typography;
 
 export default function RewardsPage() {
@@ -11,10 +11,10 @@ export default function RewardsPage() {
           <Typography style={{ float: "right" }}>
             <Title>NFT REWARDS</Title>
             <Paragraph>
-              Each NFT collection has it's own unique utilities but with
+              {`Each NFT collection has it's own unique utilities but with
               anything Hitall.io does, you enjoy privilliges with our fancy
               rewards,such as transaction,mining,auction and airdrop. We
-              consistently provide with the benefits that NFT holders.
+              consistently provide with the benefits that NFT holders.`}
             </Paragraph>
           </Typography>
         </Col>

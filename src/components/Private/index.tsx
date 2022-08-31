@@ -1,10 +1,11 @@
+import "./index.less";
+
 import { Image, List } from "antd";
-import styled from "styled-components";
-import HomeTotal from "assets/images/home-total.svg";
 import HomeFast from "assets/images/home-fast.svg";
 import HomePrivate from "assets/images/home-private.svg";
 import HomeSacure from "assets/images/home-sacure.svg";
-import "./index.less";
+import HomeTotal from "assets/images/home-total.svg";
+import styled from "styled-components";
 
 const ListWrap = styled.div`
   max-width: 1200px;

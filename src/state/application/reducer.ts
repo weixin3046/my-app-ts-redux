@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { SupportedChainId } from "../../constants/chains";
 
 export enum ApplicationModal {

@@ -24,11 +24,10 @@ export default function ExplorePage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const tab = searchParams.get("tab");
   const [activeKey, setActiveKey] = useState(tab ?? initialPanes[0].key);
-  const [panes, setPanes] = useState(initialPanes);
+  const [panes] = useState(initialPanes);
   const { data } = useQuery(FeaturedGql);
   const onChange = (newActiveKey: string) => {
     setActiveKey(newActiveKey);
-    // console.log(newActiveKey);
     setSearchParams({ tab: newActiveKey });
   };
 
@@ -38,7 +37,7 @@ export default function ExplorePage() {
       <Tabs activeKey={activeKey} onChange={onChange} centered>
         {panes.map((pane) => (
           <TabPane tab={pane.name} key={pane.key}>
-            <Row gutter={[24, 24]} align="middle" justify="center">
+            <Row gutter={[24, 24]} align="middle">
               {data?.nftcontracts?.map((item: any) => (
                 <Col
                   span={6}

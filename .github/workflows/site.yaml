@@ -12,21 +12,13 @@ jobs:
     concurrency: ci-${{ github.ref }}
      # 指定的运行器环境
     runs-on: ubuntu-latest
-    
+
     env:
       PUBLIC_URL: https://nft-sale.github.io/my-app-ts-redux/
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-
-       - uses: actions/setup-node@v3
-        with:
-          node-version: 14
-          registry-url: https://registry.npmjs.org
-          cache: yarn
-
+      - uses: ./.github/actions/setup
       - name: Install and Build 🔧
         run: |
           yarn install

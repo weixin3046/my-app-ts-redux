@@ -8,7 +8,7 @@ function getNftUri(uri: string): Promise<any> {
       .get(uri)
       .then((res: any) => {
         const image = res.data.image.replace(
-          "ipfs://",
+          /ipfs:\/\/|https:\/\/gateway.pinata.cloud\/ipfs\/|car/gi,
           "https://ipfs.io/ipfs/"
         );
         resolve({
@@ -16,7 +16,7 @@ function getNftUri(uri: string): Promise<any> {
           image,
         });
       })
-      .catch((error: any) => reject());
+      .catch((error: any) => reject(error));
   });
 }
 
@@ -25,7 +25,11 @@ export default function useGetNftUri(uri: string) {
 
   useEffect(() => {
     if (uri) {
-      run(uri);
+      const url = uri.replace(
+        /ipfs:\/\/|https:\/\/gateway.pinata.cloud\/ipfs\/|car/gi,
+        "https://ipfs.io/ipfs/"
+      );
+      run(url);
     }
   }, [uri, run]);
   return { data, error, loading };

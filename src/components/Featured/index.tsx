@@ -2,7 +2,7 @@ import "./index.less";
 
 import { useQuery } from "@apollo/client";
 import { Carousel } from "antd";
-import { FeaturedGql } from "apollographql/home";
+import { NftContractsGql } from "apollographql/home";
 import ArrowLeftCircle from "assets/images/arrow-left-circle.svg";
 import ArrowRightCircle from "assets/images/arrow-right-circle.svg";
 import { ButtonDefault } from "components/Button";
@@ -29,7 +29,7 @@ const Title = styled.div`
 
 export default function FeaturedPage() {
   // const [list, setList] = useState<any[]>();
-  const { data } = useQuery(FeaturedGql);
+  const { data } = useQuery(NftContractsGql);
 
   const onChange = (currentSlide: number) => {
     console.log(currentSlide);

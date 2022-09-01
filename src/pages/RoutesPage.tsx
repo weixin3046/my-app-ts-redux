@@ -1,4 +1,5 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { useWeb3React } from "@web3-react/core";
 import React, { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
@@ -6,12 +7,15 @@ import ExplorePage from "./Explore";
 import HomaPage from "./Home";
 // const { Header, Footer, Sider, Content } = Layout;
 
-const client = new ApolloClient({
-  uri: "https://graph.fairyswap.finance/subgraphs/name/findora/nft",
-  cache: new InMemoryCache(),
-});
-
 export default function RoutesPage() {
+  const { chainId } = useWeb3React();
+  const client = new ApolloClient({
+    uri:
+      chainId === 2153
+        ? "https://testnet-graph.fairyswap.finance/subgraphs/name/findora/nft"
+        : "https://graph.fairyswap.finance/subgraphs/name/findora/nft",
+    cache: new InMemoryCache(),
+  });
   return (
     <div className="App">
       <ApolloProvider client={client}>

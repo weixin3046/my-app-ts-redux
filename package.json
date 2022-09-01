@@ -2,7 +2,6 @@
   "name": "my-app-ts-redux",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://weixin3046.github.io/my-app-ts-redux",
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@craco/craco": "^6.4.5",
@@ -71,7 +70,7 @@
     "postcss-px-to-viewport": "^1.1.1",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.1",
     "serve": "^14.0.1"
   },
   "engines": {

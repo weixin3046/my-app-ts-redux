@@ -33,11 +33,9 @@
     "yarn.lock"
   ],
   "extends": [
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "some-other-config-you-use",
+    "plugin:prettier/recommended",
+    "prettier"
   ],
   "plugins": ["simple-import-sort", "unused-imports"],
   "rules": {
@@ -66,9 +64,6 @@
           {
             "group": ["**/dist"],
             "message": "Do not import from dist/ - this is an implementation detail, and breaks tree-shaking."
-          },
-          {
-            "group": ["!styled-components/macro"]
           }
         ]
       }

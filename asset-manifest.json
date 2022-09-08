@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://weixin3046.github.io/my-app-ts-redux/static/css/main.2ea61e15.css",
-    "main.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/main.277e434a.js",
+    "main.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/main.fcc13e19.js",
     "static/js/27.d29b4bfa.chunk.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/27.d29b4bfa.chunk.js",
     "static/media/banner.png": "https://weixin3046.github.io/my-app-ts-redux/static/media/banner.1736eb8063bb7bbb31e9.png",
     "static/media/no-image.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/no-image.6931f8b60150ae9db56143736eb47b72.svg",
@@ -17,6 +17,6 @@
   },
   "entrypoints": [
     "static/css/main.2ea61e15.css",
-    "static/js/main.277e434a.js"
+    "static/js/main.fcc13e19.js"
   ]
 }

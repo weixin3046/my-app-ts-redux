@@ -1,35 +1,22 @@
 {
   "files": {
-    "main.css": "https://weixin3046.github.io/my-app-ts-redux/static/css/main.47d32078.chunk.css",
-    "main.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/main.b4758e91.chunk.js",
-    "main.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/main.b4758e91.chunk.js.map",
-    "runtime-main.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/runtime-main.aae8e64e.js",
-    "runtime-main.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/runtime-main.aae8e64e.js.map",
-    "static/css/2.bc9d0de2.chunk.css": "https://weixin3046.github.io/my-app-ts-redux/static/css/2.bc9d0de2.chunk.css",
-    "static/js/2.b3f8579d.chunk.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/2.b3f8579d.chunk.js",
-    "static/js/2.b3f8579d.chunk.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/2.b3f8579d.chunk.js.map",
-    "static/js/3.de704f82.chunk.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/3.de704f82.chunk.js",
-    "static/js/3.de704f82.chunk.js.map": "https://weixin3046.github.io/my-app-ts-redux/static/js/3.de704f82.chunk.js.map",
+    "main.css": "https://weixin3046.github.io/my-app-ts-redux/static/css/main.2ea61e15.css",
+    "main.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/main.277e434a.js",
+    "static/js/27.d29b4bfa.chunk.js": "https://weixin3046.github.io/my-app-ts-redux/static/js/27.d29b4bfa.chunk.js",
+    "static/media/banner.png": "https://weixin3046.github.io/my-app-ts-redux/static/media/banner.1736eb8063bb7bbb31e9.png",
+    "static/media/no-image.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/no-image.6931f8b60150ae9db56143736eb47b72.svg",
+    "static/media/rewards.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/rewards.82348705631feedff0b03bffcce4bd0b.svg",
+    "static/media/home-total.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/home-total.aaf94b426c2aebbfc38be4c21dfad554.svg",
+    "static/media/home-private.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/home-private.2a0afdeb19fd4211c2fc6520d25f4cf5.svg",
+    "static/media/home-fast.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/home-fast.e80a8e7c4beb4552d13cfbcf478df868.svg",
+    "static/media/home-sacure.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/home-sacure.384a609da1057f7a2b86d36b90c50ea1.svg",
+    "static/media/logo.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/logo.ef4fe0f9d17dbf54877a1a0384e01650.svg",
     "index.html": "https://weixin3046.github.io/my-app-ts-redux/index.html",
-    "static/css/2.bc9d0de2.chunk.css.map": "https://weixin3046.github.io/my-app-ts-redux/static/css/2.bc9d0de2.chunk.css.map",
-    "static/css/main.47d32078.chunk.css.map": "https://weixin3046.github.io/my-app-ts-redux/static/css/main.47d32078.chunk.css.map",
-    "static/js/2.b3f8579d.chunk.js.LICENSE.txt": "https://weixin3046.github.io/my-app-ts-redux/static/js/2.b3f8579d.chunk.js.LICENSE.txt",
-    "static/media/arrow-left-circle.e0358dd2.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/arrow-left-circle.e0358dd2.svg",
-    "static/media/arrow-right-circle.aa3dcc6d.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/arrow-right-circle.aa3dcc6d.svg",
-    "static/media/banner.1736eb80.png": "https://weixin3046.github.io/my-app-ts-redux/static/media/banner.1736eb80.png",
-    "static/media/home-fast.e80a8e7c.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/home-fast.e80a8e7c.svg",
-    "static/media/home-private.2a0afdeb.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/home-private.2a0afdeb.svg",
-    "static/media/home-sacure.384a609d.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/home-sacure.384a609d.svg",
-    "static/media/home-total.aaf94b42.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/home-total.aaf94b42.svg",
-    "static/media/logo.ef4fe0f9.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/logo.ef4fe0f9.svg",
-    "static/media/no-image.6931f8b6.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/no-image.6931f8b6.svg",
-    "static/media/rewards.82348705.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/rewards.82348705.svg"
+    "static/media/arrow-right-circle.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/arrow-right-circle.aa3dcc6df414de14f886f8852b2bc143.svg",
+    "static/media/arrow-left-circle.svg": "https://weixin3046.github.io/my-app-ts-redux/static/media/arrow-left-circle.e0358dd2bbcc0c200b3e9e058f0c1cbd.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.aae8e64e.js",
-    "static/css/2.bc9d0de2.chunk.css",
-    "static/js/2.b3f8579d.chunk.js",
-    "static/css/main.47d32078.chunk.css",
-    "static/js/main.b4758e91.chunk.js"
+    "static/css/main.2ea61e15.css",
+    "static/js/main.277e434a.js"
   ]
 }

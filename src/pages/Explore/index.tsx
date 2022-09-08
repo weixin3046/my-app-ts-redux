@@ -87,7 +87,7 @@ export default function ExplorePage() {
 
   return (
     <Content>
-      <Title>Explore Collections tets</Title>
+      <Title>Explore Collections</Title>
       <Tabs activeKey={activeKey} onChange={onChange} centered>
         {panes.map((pane) => (
           <TabPane tab={pane.text} key={pane.id}>

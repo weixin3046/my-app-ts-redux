@@ -41,7 +41,7 @@ export default function BannerPage() {
                 align={"center"}
                 style={{ justifyContent: "center" }}
               >
-                <ButtonPrimary>Import</ButtonPrimary>
+                <ButtonPrimary>Create</ButtonPrimary>
                 <ButtonDefault>Explore</ButtonDefault>
               </Space>
             </div>

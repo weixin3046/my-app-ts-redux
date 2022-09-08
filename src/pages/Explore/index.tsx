@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { Col, Row, Tabs } from "antd";
+import { Col, Row, Spin, Tabs } from "antd";
 import { CategoriesGql, TopGql, TrendingGql } from "apollographql/home";
 import { Content } from "components/Content";
 import ContractCard from "components/ContractCard/DefaultCard";
@@ -87,30 +87,31 @@ export default function ExplorePage() {
 
   return (
     <Content>
-      <Title>Explore Collections</Title>
+      <Title>Explore Collections tets</Title>
       <Tabs activeKey={activeKey} onChange={onChange} centered>
         {panes.map((pane) => (
           <TabPane tab={pane.text} key={pane.id}>
             <Row gutter={[24, 24]} align="middle">
-              {loading && "Loading"}
+              <Spin spinning={loading}>
+                {list.map((item: any) => (
+                  <Col
+                    span={6}
+                    xl={6}
+                    lg={8}
+                    md={12}
+                    sm={24}
+                    xs={24}
+                    key={item.id}
+                  >
+                    <ContractCard
+                      item={item}
+                      ImageSize={211}
+                      height={395}
+                    ></ContractCard>
+                  </Col>
+                ))}
+              </Spin>
               {error && `Error! ${error.message}`}
-              {list.map((item: any) => (
-                <Col
-                  span={6}
-                  xl={6}
-                  lg={8}
-                  md={12}
-                  sm={24}
-                  xs={24}
-                  key={item.id}
-                >
-                  <ContractCard
-                    item={item}
-                    ImageSize={211}
-                    height={395}
-                  ></ContractCard>
-                </Col>
-              ))}
             </Row>
           </TabPane>
         ))}

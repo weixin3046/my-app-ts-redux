@@ -33,9 +33,12 @@
     "yarn.lock"
   ],
   "extends": [
-    "some-other-config-you-use",
-    "plugin:prettier/recommended",
-    "prettier"
+    "react-app",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
   ],
   "plugins": ["simple-import-sort", "unused-imports"],
   "rules": {
